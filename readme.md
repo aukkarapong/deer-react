@@ -130,3 +130,17 @@ const Style = styled('div')`
 `
 
 ```
+
+## /src/ListUser/index.js
+```
+import React from 'react'
+import styled from '@emotion/styled'
+
+export default () => {
+  return <Style>List User Page</Style>
+}
+
+const Style = styled('div')`
+  label: ListUser;
+`
+```
