@@ -1,3 +1,22 @@
+## modules/user/index.js
+```
+addUserFormFirstname: '',
+addUserFormLastname: '',
+addUserFormUsername: '',
+addUserFormEmail: '',
+addUserFormPhone: '',
+addUserFormWebsite: '',
+addUserFormAddressStreet: '',
+addUserFormAddressSuite: '',
+addUserFormAddressCity: '',
+addUserFormAddressZipcode: '',
+addUserFormAddressLat: '',
+addUserFormAddressLng: '',
+addUserFormCompanyName: '',
+addUserFormCompanyCatchPhrase: '',
+addUserFormCompanyBS: ''
+```
+
 ## Header/index.js
 
 ```
