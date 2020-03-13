@@ -1,22 +1,56 @@
 ```
-const provinceList = useSelector(state => state.user.provinceList)
-const addUserFormFirstname = useSelector(state => state.user.addUserFormFirstname)
-const addUserFormLastname = useSelector(state => state.user.addUserFormLastname)
-const addUserFormUsername = useSelector(state => state.user.addUserFormUsername)
-const addUserFormEmail = useSelector(state => state.user.addUserFormEmail)
-const addUserFormPhone = useSelector(state => state.user.addUserFormPhone)
-const addUserFormWebsite = useSelector(state => state.user.addUserFormWebsite)
-const addUserFormAddressStreet = useSelector(state => state.user.addUserFormAddressStreet)
-const addUserFormAddressSuite = useSelector(state => state.user.addUserFormAddressSuite)
-const addUserFormAddressCity = useSelector(state => state.user.addUserFormAddressCity)
-const addUserFormAddressZipcode = useSelector(state => state.user.addUserFormAddressZipcode)
-const addUserFormAddressLat = useSelector(state => state.user.addUserFormAddressLat)
-const addUserFormAddressLng = useSelector(state => state.user.addUserFormAddressLng)
-const addUserFormCompanyName = useSelector(state => state.user.addUserFormCompanyName)
-const addUserFormCompanyCatchPhrase = useSelector(
-  state => state.user.addUserFormCompanyCatchPhrase
-)
-const addUserFormCompanyBS = useSelector(state => state.user.addUserFormCompanyBS)
+const createUser = ({
+  firstname,
+  lastname,
+  username,
+  email,
+  street,
+  suite,
+  city,
+  zipcode,
+  lat,
+  lng,
+  phone,
+  website,
+  companyName,
+  companyCatchPhrase,
+  companyBS
+}) => {
+  const callAction = async dispatch => {
+    const newUser = {
+      id: 11,
+      name: `${firstname} ${lastname}`,
+      username,
+      email,
+      address: {
+        street,
+        suite,
+        city,
+        zipcode,
+        geo: {
+          lat,
+          lng
+        }
+      },
+      phone,
+      website,
+      company: {
+        name: companyName,
+        catchPhrase: companyCatchPhrase,
+        bs: companyBS
+      }
+    }
+
+    const { data } = await fetchCreateUser(newUser)
+
+    const newUsersData = [...data, newUser]
+
+    dispatch(
+      user.setUsers({
+        users: newUsersData
+      })
+    )
+  }
 ```
 
 ## modules/user/index.js
