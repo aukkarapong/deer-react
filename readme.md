@@ -1,4 +1,19 @@
 ```
+const fetchCreateUser = params => {
+  const requestBody = { ...params }
+  return createFetcher({
+    useMock: useMock,
+    method: 'post',
+    // url: `${apiUrl}/api/dealer/specify`,
+    url: 'https://jsonplaceholder.typicode.com/posts',
+    data: requestBody,
+    jsonMock: 'users.json',
+    delay: 2
+  })
+}
+```
+
+```
 const createUser = ({
   firstname,
   lastname,
